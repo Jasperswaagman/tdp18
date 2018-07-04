@@ -1,0 +1,209 @@
+{
+  "route_01": {
+    "id": 1,
+    "name": "TdP_01_a",
+    "distance": 73.0,
+    "elevation": 1850,
+    "segments": {"1": { "seg_id": 937156, "Length": 1.5, "avg_grade": 9.4 },"2": { "seg_id": 7835843, "Length": 18.1, "avg_grade": 5.1 }},
+    "id_velo": 14097340,
+    "id_rwgps": 27911649
+  },
+  "route_02": {
+    "id": 2,
+    "name": "TdP_02_a",
+    "distance": 59.7,
+    "elevation": 1116,
+    "segments": {"1": { "seg_id": 10479297, "Length": 16.6, "avg_grade": 4.9 }},
+    "id_velo": 14097587,
+    "id_rwgps": 27922066
+  },
+  "route_03": {
+    "id": 3,
+    "name": "TdP_03_a",
+    "distance": 56.0,
+    "elevation": 1247,
+    "segments": {"1": { "seg_id": 15645544, "Length": 14.9, "avg_grade": 4.9 }},
+    "id_velo": 14097486,
+    "id_rwgps": 27922194
+  },
+  "route_04": {
+    "id": 4,
+    "name": "TdP_04_a",
+    "distance": 62.9,
+    "elevation": 1956,
+    "segments": {"1": { "seg_id": 7819075, "Length": 13.7, "avg_grade": 5.9 }},
+    "id_velo": 14097619,
+    "id_rwgps": 27922294
+  },
+  "route_05": {
+    "id": 5,
+    "name": "TdP_05_a",
+    "distance": 65.8,
+    "elevation": 1491,
+    "segments": {"1": { "seg_id": 4459288, "Length": 29, "avg_grade": 3.4 }},
+    "id_velo": 14097665,
+    "id_rwgps": 27944217
+  },
+  "route_06": {
+    "id": 6,
+    "name": "TdP_05_b",
+    "distance": 59.7,
+    "elevation": 1280,
+    "segments": {"1": { "seg_id": 6995306, "Length": 16.9, "avg_grade": 3.8 }},
+    "id_velo": 14097686,
+    "id_rwgps": 27944241
+  },
+  "route_07": {
+    "id": 7,
+    "name": "TdP_05_c",
+    "distance": 77.3,
+    "elevation": 2043,
+    "segments": {"1": { "seg_id": 5485500, "Length": 28.3, "avg_grade": 3.6 },"2": { "seg_id": 707993, "Length": 7.6, "avg_grade": 6.9 }},
+    "id_velo": 14097712,
+    "id_rwgps": 27944337
+  },
+  "route_08": {
+    "id": 8,
+    "name": "TdP_06_a",
+    "distance": 17.3,
+    "elevation": 684,
+    "segments": {"1": { "seg_id": 2009347, "Length": 6.2, "avg_grade": 10.2 }},
+    "id_velo": 14097735,
+    "id_rwgps": 27944573
+  },
+  "route_09": {
+    "id": 9,
+    "name": "TdP_06_b",
+    "distance": 17.3,
+    "elevation": 684,
+    "segments": {"1": { "seg_id": 11346462, "Length": 6.6, "avg_grade": 9.4 }},
+    "id_velo": 14097752,
+    "id_rwgps": 27944626
+  },
+  "route_10": {
+    "id": 10,
+    "name": "TdP_07_a",
+    "distance": 24.7,
+    "elevation": 982,
+    "segments": {"1": { "seg_id": 4759736, "Length": 7.1, "avg_grade": 12.1 }},
+    "id_velo": 14097766,
+    "id_rwgps": 27944709
+  },
+  "route_11": {
+    "id": 11,
+    "name": "TdP_08_a",
+    "distance": 24.4,
+    "elevation": 619,
+    "segments": {"1": { "seg_id": 8373555, "Length": 4.8, "avg_grade": 9.3 }},
+    "id_velo": 14098003,
+    "id_rwgps": 27944787
+  },
+  "route_12": {
+    "id": 12,
+    "name": "TdP_08_b",
+    "distance": 39.2,
+    "elevation": 1183,
+    "segments": {"1": { "seg_id": 8373555, "Length": 4.8, "avg_grade": 9.3 },"2": { "seg_id": 15129415, "Length": 6.1, "avg_grade": 9.9 }},
+    "id_velo": 14098019,
+    "id_rwgps": 27944903
+  },
+  "route_13": {
+    "id": 13,
+    "name": "TdP_08_c",
+    "distance": 30.5,
+    "elevation": 794,
+    "segments": {"1": { "seg_id": 15129415, "Length": 6.1, "avg_grade": 9.9 }},
+    "id_velo": 14098048,
+    "id_rwgps": 27945578
+  },
+  "route_14": {
+    "id": 14,
+    "name": "TdP_09_a",
+    "distance": 65.3,
+    "elevation": 1562,
+    "segments": {"1": { "seg_id": 10237037, "Length": 4.7, "avg_grade": 9.5 },"2": { "seg_id": 9702339, "Length": 2.3, "avg_grade": 10.8 },"3": { "seg_id": 11790315, "Length": 5.1, "avg_grade": 3.7 },"4": { "seg_id": 3661613, "Length": 0.8, "avg_grade": 10.3 },"5": { "seg_id": 17306107, "Length": 1.3, "avg_grade": 10.3 }},
+    "id_velo": 14098072,
+    "id_rwgps": 27945910
+  },
+  "route_15": {
+    "id": 15,
+    "name": "TdP_09_b",
+    "distance": 61.8,
+    "elevation": 1531,
+    "segments": {"1": { "seg_id": 11866701, "Length": 5.2, "avg_grade": 8.2 },"2": { "seg_id": 2817497, "Length": 5.1, "avg_grade": 7.6 }},
+    "id_velo": 14098098,
+    "id_rwgps": 27945931
+  },
+  "route_16": {
+    "id": 16,
+    "name": "TdP_10_a",
+    "distance": 89.3,
+    "elevation": 1576,
+    "segments": {"1": { "seg_id": 3952851, "Length": 4.1, "avg_grade": 9.3 },"2": { "seg_id": 4818213, "Length": 6.6, "avg_grade": 4 }},
+    "id_velo": 14098314,
+    "id_rwgps": 27946033
+  },
+  "route_17": {
+    "id": 17,
+    "name": "TdP_10_b",
+    "distance": 74.7,
+    "elevation": 1180,
+    "segments": {"1": { "seg_id": 3952851, "Length": 4.1, "avg_grade": 9.3 },"2": { "seg_id": 4818213, "Length": 6.6, "avg_grade": 4 }},
+    "id_velo": 14098336,
+    "id_rwgps": 27947414
+  },
+  "route_18": {
+    "id": 18,
+    "name": "TdP_11_a",
+    "distance": 66.6,
+    "elevation": 1540,
+    "segments": {"1": { "seg_id": 11600279, "Length": 12.8, "avg_grade": 7.2 }},
+    "id_velo": 14098352,
+    "id_rwgps": 27946157
+  },
+  "route_19": {
+    "id": 19,
+    "name": "TdP_11_b",
+    "distance": 55.6,
+    "elevation": 1233,
+    "segments": {"1": { "seg_id": 11600279, "Length": 12.8, "avg_grade": 7.2 }},
+    "id_velo": 14098368,
+    "id_rwgps": 27946193
+  },
+  "route_20": {
+    "id": 20,
+    "name": "TdP_12_a",
+    "distance": 52.5,
+    "elevation": 1950,
+    "segments": {"1": { "seg_id": 4938866, "Length": 11.2, "avg_grade": 10.6 },"2": { "seg_id": 7438961, "Length": 6.7, "avg_grade": 6.8 }},
+    "id_velo": 14098383,
+    "id_rwgps": 27946555
+  },
+  "route_21": {
+    "id": 21,
+    "name": "TdP_12_b",
+    "distance": 52.2,
+    "elevation": 1948,
+    "segments": {"1": { "seg_id": 10211825, "Length": 13.8, "avg_grade": 10 },"2": { "seg_id": 1617389, "Length": 3.3, "avg_grade": 10.5 }},
+    "id_velo": 14098404,
+    "id_rwgps": 27946589
+  },
+  "route_22": {
+    "id": 22,
+    "name": "TdP_12_c",
+    "distance": 35.0,
+    "elevation": 1376,
+    "segments": {"1": { "seg_id": 7399742, "Length": 9.3, "avg_grade": 11.9 }},
+    "id_velo": 14098421,
+    "id_rwgps": 27946734
+  },
+  "route_23": {
+    "id": 23,
+    "name": "TdP_12_d",
+    "distance": 23.5,
+    "elevation": 1032,
+    "segments": {"1": { "seg_id": 2008993, "Length": 7.3, "avg_grade": 12.1 },"2": { "seg_id": 4633345, "Length": 0.5, "avg_grade": 21.9 }},
+    "id_velo": 14098429,
+    "id_rwgps": 27946772
+  }
+}

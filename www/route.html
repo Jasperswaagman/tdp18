@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="../../main.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="header" id="header">
+            <img width="1420px" height="100px" src="elevation_profile.svg"></img>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <a onclick="window.history.back()"><img src="../../images/home.png"></a>
+            <a id="velo_link" target="_blank" ><img src="../../images/veloviewer_128x128.png"></a>
+            <a id="rwgps_link" target="_blank"><img src="../../images/ridewithgps_128x128.png"></a>
+            <a id="dl-tcx" download><img src="../../images/dl-tcx.png"></a>
+            <a id="dl-gpx" download><img src="../../images/dl-gpx.png"></a>
+            <a id="dl-fit" download><img src="../../images/dl-fit.png"></a>
+        </div>
+
+        <!-- The flexible grid (content) -->
+        <div class="row">
+            <div class="side">
+                <div onclick="show3D()" class="fakeimg" style="height:60px;">3D</div><br>
+                <div onclick="showRoute()" class="fakeimg" style="height:60px;">Route</div><br>
+                <div id="segments">
+                </div>
+            </div>
+            <div class="main" id="main">
+            </div>
+        </div>
+    </body>
+    <script>
+        var id = window.location.pathname.split('/')[2]
+        var route;
+
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                routes = JSON.parse(this.responseText);
+                for (x in routes) {
+                    if (routes[x].id == id) {
+                        route = routes[x]
+                    }
+                }
+            }
+        }
+        xmlhttp.open("GET", "../../routes.json", false);
+        xmlhttp.send();
+        window.onload = function() { show3D() };
+
+        document.getElementById("velo_link").href = "https://veloviewer.com/routes/" + route.id_velo
+        document.getElementById("rwgps_link").href = "https://ridewithgps.com/routes/" + route.id_rwgps
+        document.getElementById("dl-tcx").href = route.name + ".tcx"
+        document.getElementById("dl-gpx").href = route.name + ".gpx"
+        document.getElementById("dl-fit").href = route.name + ".fit"
+
+        function showRoute() {
+            document.getElementById("main").innerHTML = "<iframe src='https://rwgps-embeds.com/embeds?type=route&id=" + route.id_rwgps + "&metricUnits=true&sampleGraph=true' style='width: 1px; min-width: 100%; height: 700px; border: none;' scrolling='no'></iframe>"
+        }
+        
+        function show3D() {
+            document.getElementById('main').innerHTML = "<iframe style='width:100%;height:450px;' src='https://veloviewer.com/routes/" + route.id_velo + "/embed' frameborder='0' scrolling='no'></iframe>"
+        }
+
+        function showSegment(s_id) {
+            document.getElementById("main").innerHTML = "<iframe style='width:100%;height:450px;' src='https://veloviewer.com/segments/" + s_id + "/embed?default2d=y' frameborder='0' scrolling='no'></iframe>"
+        }
+
+        var segment_div = document.getElementById("segments");
+        for (segment in route.segments) {
+            segment_div.innerHTML += "<div onclick='showSegment(" + route.segments[segment].seg_id + ")' class='fakeimg' style='height:60px;'>Segment " + segment + "<br>("+route.segments[segment].Length+" km, "+route.segments[segment].avg_grade+" %)</div><br>"
+            console.log(route.segments[segment].seg_id)
+        }
+    </Script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div>
+            <iframe src='https://rwgps-embeds.com/embeds?type=event&eventId=59767&metricUnits=true&sampleGraph=true&defaultShowAll=true' style='width: 1px; min-width: 100%; height: 700px; border: none;' scrolling='no'></iframe>
+        </div>
+        <table id="routes_table">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">#</th>
+                    <th style="font-weight: bold">Name</th>
+                    <th class="theader" onclick="sortTable(2)">KMs</th>
+                    <th class="theader" onclick="sortTable(3)">Elevation</th>
+                    <th class="theader" onclick="sortTable(4)">Climbs</th>
+                    <th>Click the Profile for details</th>
+                    <th>Velo</th>
+                    <th>TCX</th>
+                    <th>GPX</th>
+                    <th>FIT</th>
+                </tr>
+            </thead>
+            <tbody id="routes_table_data"></tbody>
+        </table>
+        <script>
+            var txt = "";
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    myObj = JSON.parse(this.responseText);
+                    for (x in myObj) {
+                        var root = "routes/" + myObj[x].id
+                        var climbs = Object.keys(myObj[x].segments).length
+                        txt += "<tr>"
+                        txt += "<td>" + myObj[x].id + "</td>"
+                        txt += "<td><a href='" + root + "/route.html'>" + myObj[x].name + "</a></td>"
+                        txt += "<td>" + myObj[x].distance + "</td>"
+                        txt += "<td>" + myObj[x].elevation + "</td>"
+                        txt += "<td>" + climbs + "</td>"
+                        txt += "<td class='profile_details' >" + "<img onclick=\"window.open('" + root + "/route.html', '_self')\" src='" + root + "/elevation_profile.svg' width='1300px'></img>" + "</td>"
+                        txt += "<td class='profile_details' >" + "<a href='https://veloviewer.com/routes/" + myObj[x].id_velo + "' target='_blank'><img src='images/veloviewer_128x128.png'></a>" + "</td>"
+                        txt += "<td class='profile_details' >" + "<a href='" + root + "/" + myObj[x].name + ".tcx' download><img src='images/dl-tcx.png'></a>" + "</td>"
+                        txt += "<td class='profile_details' >" + "<a href='" + root + "/" + myObj[x].name + ".gpx' download><img src='images/dl-gpx.png'></a>" + "</td>"
+                        txt += "<td class='profile_details' >" + "<a href='" + root + "/" + myObj[x].name + ".fit' download><img src='images/dl-fit.png'></a>" + "</td>"
+                        txt += "</tr>"
+                    }
+                    document.getElementById("routes_table_data").innerHTML = txt;
+                }
+            };
+            xmlhttp.open("GET", "routes.json", true);
+            xmlhttp.send();
+
+            function sortTable(n) {
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementById("routes_table");
+                switching = true;
+                // Set the sorting direction to ascending:
+                dir = "asc"; 
+                /* Make a loop that will continue until
+                no switching has been done: */
+                while (switching) {
+                    // Start by saying: no switching is done:
+                    switching = false;
+                    rows = table.getElementsByTagName("tr");
+                    /* Loop through all table rows (except the
+                    first, which contains table headers): */
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        // Start by saying there should be no switching:
+                        shouldSwitch = false;
+                        /* Get the two elements you want to compare,
+                        one from current row and one from the next: */
+                        x = Number(rows[i].getElementsByTagName("td")[n].innerHTML);
+                        y = Number(rows[i + 1].getElementsByTagName("td")[n].innerHTML);
+                        /* Check if the two rows should switch place,
+                        based on the direction, asc or desc: */
+                        if (dir == "asc") {
+                            if (x > y) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                            }
+                        } else if (dir == "desc") {
+                            if (x < y) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        /* If a switch has been marked, make the switch
+                        and mark that a switch has been done: */
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        // Each time a switch is done, increase this count by 1:
+                        switchcount ++; 
+                    } else {
+                        /* If no switching has been done AND the direction is "asc",
+                        set the direction to "desc" and run the while loop again. */
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
