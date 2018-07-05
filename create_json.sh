@@ -33,8 +33,8 @@ json='  "route_'$route_id'": {
     "distance": '$distance',
     "elevation": '$elevation',
     '$segments_json'
-    "link_velo": "https://veloviewer.com/routes/'$velo_id'",
-    "link_rwgps": "https://ridewithgps.com/routes/'$rwgps_id'"
+    "link_velo": '$velo_id',
+    "link_rwgps": '$rwgps_id'
   },'
 
 echo "$json" >> "$1"
