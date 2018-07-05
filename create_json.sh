@@ -1,7 +1,7 @@
 #!/bin/bash
-route_id=$(tail -10 "$1" | grep route_ | tr -dc '0-9')
+route_id=$(tail -10 www/routes.json | grep route_ | tr -dc '0-9')
 route_id=$(echo $route_id + 1 | bc | awk '{printf $0}') # needs a padding zero for 1-9
-id=$(tail -10 "$1" | grep -m1 id | tr -dc '0-9')
+id=$(tail -10 www/routes.json | grep -m1 id | tr -dc '0-9')
 id=$(($id + 1))
 
 echo -en "Name: "; read name
@@ -15,7 +15,7 @@ distance=$(grep -m 1 -A 3 hide_unless_distance <<< $rwgps_html | tail -1 | sed '
 elevation=$(grep -m 1 txtAscent <<< $rwgps_html | tr -dc '0-9')
 
 segments_json='"segments": {'
-i=1; b=""
+i="$id"; b=""
 for s in $segments; do
   seg_html=$(wget -qO- https://veloviewer.com/segments/"$s")
   seg_length=$(grep -m1 '="distance"' <<< $seg_html | perl -wnE 'say /\d+\.\d+/g')
